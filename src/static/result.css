@@ -1,0 +1,79 @@
+/* result.css */
+/* Center the title */
+.title {
+    text-align: center;
+}
+
+/* Center the h4 tag */
+.result-container h4 {
+    text-align: center;
+}
+
+/* Style for the result container */
+.result-container {
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style for table headers */
+th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style for table rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style for table cells */
+td {
+    padding: 10px;
+}
+
+/* Style for links */
+a {
+    color: blue;
+}
+
+/* Style for buttons */
+.exit-button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px;
+        
+}
+
+.new-search-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/* Center the buttons horizontally */
+.result-buttons {
+    align-items: center;
+}

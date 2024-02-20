@@ -1,0 +1,47 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <div class="title">
+        <h1>Air bnb Look up - Results</h1>
+    </div>
+</head>
+<body>
+    <div class="result-container">
+        <h4>Matching Air bnb Data for <strong>{{ country }}</strong></h4>
+        <table border="1">
+            <tr>
+                <th>Listing URL</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Number of Bedrooms</th>
+                <th>Number of Beds</th>
+                <th>Guess Capacity</th>
+                <th>Bathrooms</th>
+                <!-- Add more columns based on your data structure -->
+            </tr>
+            {% for item in result %}
+            <tr>
+                <td><a href="{{ item.listing_url }}" target="_blank">{{ item.listing_url }}</a></td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.address.suburb }}</td>
+                <td>{{ item.bedrooms }}</td>
+                <td>{{ item.beds }}</td>
+                <td>{{ item.accommodates }}</td>
+                <td>{{ item.bathrooms }}</td>
+                <!-- Add more columns based on your data structure -->
+            </tr>
+            {% endfor %}
+        </table>
+        <div>
+        </div class="resul-buttons">
+            <a href="{{ url_for('exit') }}"><button type="button" class="exit-button">Exit</button></a>
+            <a href="{{ url_for('show_choices', input_name='test') }}"><button type="button" class="new-search-button">New Search</button></a>
+        </div>
+    </div>
+</body>
+</html>

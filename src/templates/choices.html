@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Air bnb Loop up</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='choices.css') }}">     
+    </head>
+    <body>
+        <div>
+            <h2>Air bnb Loop up</h2>
+            <p style="color: red">Temporary Note: This is a test project and I am using a public dataset,
+                there may be some countries for which this API won't return any data. But
+                for sure it works for Unites States, Brazil, Portugal, Australia. You can try
+                other countries and see if you get data back.
+            </p>
+        </div>
+        <div class="choices-container">
+            <h4>Welcome "{{ input_name }}", Please enter the following information?</h4>
+            <form action="/retrieve_airbnb_data" method="POST">
+                <label for="num_bedrooms">Number of Bedrooms:</label>
+                <input type="number" name="num_bedrooms" min="0">
+    
+                <label for="country">Country:</label>
+                <input type="text" name="country"><br><br>
+    
+                <input type="submit" value="Retrieve Airbnb Data">
+                <a href="{{ url_for('exit') }}"><button type="button" class="exit-button">Exit</button></a>
+            </form>
+        </div>
+    </body>
+</html>
