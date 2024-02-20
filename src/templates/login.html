@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Air bnb Look up</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">       
+    </head>
+    <body>
+        <div>
+            <h2>Air bnb Look up</h2>
+            <p style="color: red">
+                Temporary Note: This is a WIP project, at this time, use anything
+                for username and password to login. Have Fun!
+            </p>       
+        </div>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/echo_user_input" method="POST">
+                <input name="user_input" placeholder="Username" required>
+                <input type="password" name="user_password" placeholder="Password" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
