@@ -1,0 +1,59 @@
+<!-- dmodified.html -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <div class="title">
+        <h1>Air bnb Ranking Scores - Results</h1>
+    </div>
+</head>
+<body>
+    <div class="result-container">
+        <p style="color: red">The criteria for highest ranking score is above <strong>85</strong></p>
+        <h3>Highest Ranking Scores Air bnb Data</h3>
+        <table border="1">
+            <tr>
+                <th>Sqlite3_ID</th>
+                <th>Listing URL</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Bedrooms</th>
+                <th>Beds</th>
+                <th>Accommodates</th>
+                <th>Bathrooms</th>
+                <th>Review Score</th>
+            </tr>
+            {% for user in highest_rankings %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td><a href="{{ user[1] }}" target="_blank"> {{ user[1] }}</a></td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[3] }}</td>
+                <td>{{ user[4] }}</td>
+                <td>{{ user[5] }}</td>
+                <td>{{ user[6] }}</td>
+                <td>{{ user[7] }}</td>
+                <td>{{ user[8] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="result-buttons-container">
+            <a href="{{ url_for('exit') }}"><button type="button" class="exit-button">Exit</button></a>
+            <a href="{{ url_for('show_choices', input_name='test') }}"><button type="button" class="new-search-button">New Search</button></a>
+        </div>        
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>

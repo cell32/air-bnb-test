@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
     <div class="title">
         <h1>Air bnb Look up - Results</h1>
+        <p style="color: red">Note: This is a <strong> test project </strong>which is using a public air bnb dataset.
+            Some links will take you to the air bnb main page and not to the actual listing location.
+        </p>
     </div>
 </head>
-<body>
+<body> 
     <div class="result-container">
-        <h4>Matching Air bnb Data for <strong>{{ country }}</strong></h4>
+        <h3>Matching Air bnb Data for{{ country }}</h3>
         <table border="1">
             <tr>
                 <th>Listing URL</th>
@@ -22,6 +25,7 @@
                 <th>Number of Beds</th>
                 <th>Guess Capacity</th>
                 <th>Bathrooms</th>
+                <th>Review Score</th>
                 <!-- Add more columns based on your data structure -->
             </tr>
             {% for item in result %}
@@ -33,14 +37,17 @@
                 <td>{{ item.beds }}</td>
                 <td>{{ item.accommodates }}</td>
                 <td>{{ item.bathrooms }}</td>
+                <td>{{ item.review_scores.review_scores_rating }}</td>
                 <!-- Add more columns based on your data structure -->
             </tr>
             {% endfor %}
         </table>
-        <div>
-        </div class="resul-buttons">
+        <div class="result-buttons-container">
             <a href="{{ url_for('exit') }}"><button type="button" class="exit-button">Exit</button></a>
             <a href="{{ url_for('show_choices', input_name='test') }}"><button type="button" class="new-search-button">New Search</button></a>
+            <form action="see_highest_ranking" method="POST">
+                <input type="submit" value="See Highest Ranking Places" class="new-search-button">
+            </form>               
         </div>
     </div>
 </body>

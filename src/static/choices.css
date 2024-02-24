@@ -5,6 +5,12 @@ body {
     background-color: #f4f4f4;
     text-align: center;
 }
+
+.choices-test {
+    width:800px;
+    margin: auto;
+    text-align: center;
+}
 .choices-container {
     width:500px;
     margin: auto;

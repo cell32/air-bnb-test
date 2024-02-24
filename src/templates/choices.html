@@ -7,16 +7,18 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='choices.css') }}">     
     </head>
     <body>
-        <div>
-            <h2>Air bnb Loop up</h2>
-            <p style="color: red">Temporary Note: This is a test project and I am using a public dataset,
-                there may be some countries for which this API won't return any data. But
-                for sure it works for Unites States, Brazil, Portugal, Australia. You can try
-                other countries and see if you get data back.
-            </p>
+        <div class="choices-test">
+            <h1>Air bnb Look up</h1>
+            <p style="color: red">Note: This is a <strong> test project </strong>which is using a public air bnb dataset.
+                There are some countries for which this API won't return any data. Some links
+                will take you to the air bnb main page and not to the actual listing location.</p>
+
+            <p>Some countries to try: Unites States, Brazil, Portugal, Australia. You can try
+                other countries and see if you get data back.</p><strong> Have Fun!</strong>
+
         </div>
         <div class="choices-container">
-            <h4>Welcome "{{ input_name }}", Please enter the following information?</h4>
+            <p>Welcome <strong>{{ input_name }}</strong>, please enter the following information?</p>
             <form action="/retrieve_airbnb_data" method="POST">
                 <label for="num_bedrooms">Number of Bedrooms:</label>
                 <input type="number" name="num_bedrooms" min="0">

@@ -13,13 +13,11 @@ cursor = conn.cursor()
 cursor.execute("SELECT * FROM Users")
 rows = cursor.fetchall()
 
-# Filter rows based on the nested JSON structure
-#filtered_rows = [row for row in rows if json.loads(row[1])['item']['address']['suburb'] == 'Laranjeiras']
-
-
-# Print the results
+# Print only the rows where the rating is greater than 85
 for row in rows:
-    print(row)
+    rating = row[-1]  # Assuming the rating is the last item in each row
+    if rating > 85:
+        print(row)    
 
 # Close the connection
 conn.close()

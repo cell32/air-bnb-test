@@ -5,12 +5,13 @@
 }
 
 /* Center the h4 tag */
-.result-container h4 {
+/* .result-container h4 {
     text-align: center;
-}
+} */
 
 /* Style for the result container */
 .result-container {
+    text-align: center;
     margin-top: 20px;
     border: 2px solid #ccc;
     border-radius: 5px;
@@ -73,7 +74,26 @@ a {
     margin-right: 10px;
 }
 
-/* Center the buttons horizontally */
-.result-buttons {
+.highest-rankin-score-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 10px; 
+}
+
+.result-buttons-container {
+    align-items: center;
+}
+
+.ranking-buttons-container {
+    align-items: center;
+}
+
+.ranking-page-buttons {
     align-items: center;
 }
