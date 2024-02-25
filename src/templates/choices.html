@@ -13,18 +13,18 @@
                 There are some countries for which this API won't return any data. Some links
                 will take you to the air bnb main page and not to the actual listing location.</p>
 
-            <p>Some countries to try: Unites States, Brazil, Portugal, Australia. You can try
-                other countries and see if you get data back.</p><strong> Have Fun!</strong>
+            <p>Some countries to try: United States, Brazil, Portugal, Australia. You can try
+                other countries and see if you get data back.</p><strong>Have Fun!</strong>
 
         </div>
         <div class="choices-container">
             <p>Welcome <strong>{{ input_name }}</strong>, please enter the following information?</p>
             <form action="/retrieve_airbnb_data" method="POST">
                 <label for="num_bedrooms">Number of Bedrooms:</label>
-                <input type="number" name="num_bedrooms" min="0">
+                <input type="number" name="num_bedrooms" min="1" placeholder="" required>
     
                 <label for="country">Country:</label>
-                <input type="text" name="country"><br><br>
+                <input type="text" name="country" placeholder="" required><br><br>
     
                 <input type="submit" value="Retrieve Airbnb Data">
                 <a href="{{ url_for('exit') }}"><button type="button" class="exit-button">Exit</button></a>

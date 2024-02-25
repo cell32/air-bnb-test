@@ -1,12 +1,15 @@
-#!/usr/bin/env python3
-	
+# app.py
+
 import os
-from flask import Flask, redirect, render_template, request, url_for, session
+from flask import Flask, Response, jsonify, redirect, render_template, request, url_for, session
+from prometheus_client import CONTENT_TYPE_LATEST, generate_latest
+from sqlalchemy import text
 from scripts.data_collector import retrieve_airbnb_data
 from scripts.data_modifier import see_highest_ranking_data
 from flask_sqlalchemy import SQLAlchemy
 from bson.decimal128 import Decimal128
 from dotenv import load_dotenv
+from metrics.metrics_instrumentation import setup_prometheus_metrics, setup_db_health_check, setup_prometheus_metrics_endpoint 
 
 load_dotenv()
 	
@@ -40,7 +43,6 @@ class Users(db.Model):
 # Create all tables if they do not exist
 with app.app_context():
     db.create_all()
-
 
 @app.route("/")
 def main():
@@ -109,6 +111,11 @@ def see_highest_ranking():
     except Exception as e:
         print("Exception during see_highest_ranking_route:", e)
         return "An error occurred"
+
+# call back functions for metrcis/health checks defined on metrics_instrumentation.py
+setup_prometheus_metrics(app)
+
+setup_db_health_check(db,app) 
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
