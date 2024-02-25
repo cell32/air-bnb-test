@@ -7,7 +7,6 @@ from sqlalchemy import text
 
 app = Flask(__name__)
 
-
 # /health endpoint
 def db_health_check_endpoint(db,app):
     @app.route('/health')
@@ -26,7 +25,6 @@ def db_health_check_endpoint(db,app):
 
 def setup_db_health_check(db,app):
     db_health_check_endpoint(db, app)
-
 
 # /metrics endpoint
 def setup_prometheus_metrics_endpoint(app):   
