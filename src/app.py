@@ -106,7 +106,7 @@ def see_highest_ranking():
     country =  session.get('country')
     try:
         # Call the function from data_modifier.py
-        filtered_rows = see_highest_ranking_data(country) ####
+        filtered_rows = see_highest_ranking_data(country) #passing country to use in data_modifier
 
         return render_template("dmodified.html", highest_rankings=filtered_rows, country=country)
 
