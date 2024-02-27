@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests
         run: |
-          cd $GITHUB_WORKSPACE/tests
-          pytest .
+          cd $GITHUB_WORKSPACE/src
+          pytest test
         env:
-          PYTHONPATH: $GITHUB_WORKSPACE/tests
+          PYTHONPATH: $GITHUB_WORKSPACE/src
