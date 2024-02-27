@@ -45,4 +45,4 @@ jobs:
           cd $GITHUB_WORKSPACE/tests
           pytest .
         env:
-          PYTHONPATH: $GITHUB_WORKSPACE:$GITHUB_WORKSPACE/src
+          PYTHONPATH: $GITHUB_WORKSPACE/tests
