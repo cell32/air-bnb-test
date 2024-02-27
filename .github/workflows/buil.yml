@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
           pip install Flask Flask-Testing
-          pip install pymongo
+          #pip install pymongo
           pip install python-dotenv
         working-directory: ${{ github.workspace }}
 
