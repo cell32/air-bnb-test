@@ -1,7 +1,4 @@
 import unittest
-import os
-import sys
-
 from flask import Flask, url_for
 from flask_testing import TestCase
 from src.app import app

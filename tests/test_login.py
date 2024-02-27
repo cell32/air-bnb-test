@@ -1,6 +1,4 @@
 import unittest
-import os
-import sys
 from src.app import app
 
 # if os.environ.get("GITHUB_ACTIONS"):
@@ -21,7 +19,7 @@ class TestLogin(unittest.TestCase):
 
     def test_login_redirected_url(self):
         response = self.app.post("/echo_user_input", data={"user_input": "test_user", "user_password": "test_password"})
-        self.assertEqual(response.status_code, 302)  # Expecting a redirect
+        self.assertEqual(response.status_code, 302)  # Expecting status code 302 a redirect
         self.assertIn(b"test_user", response.data)  # Assuming the username is included in the redirected URL
 
 if __name__ == "__main__":
