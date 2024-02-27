@@ -15,7 +15,7 @@ load_dotenv()
 	
 app = Flask(__name__)
 
-# Setting up secret key to use session variables and use 'country' input value to be used in another route 
+# Setting up secret key to use session variables and use 'country' input value to be used in another route. 
 session_secret_key_str = os.getenv('session_secret_key')
 session_secret_key_bytes = session_secret_key_str.encode('utf-8')
 
