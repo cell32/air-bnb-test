@@ -2,6 +2,7 @@ import unittest
 from flask import Flask, url_for
 from flask_testing import TestCase
 from src.app import app
+from collections.abc import MutableMapping
 
 # if os.environ.get("GITHUB_ACTIONS"):
 #     from app import app
