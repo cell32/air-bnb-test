@@ -13,13 +13,14 @@
 <body>
     <div class="result-container">
         <p style="color: red">The criteria for highest ranking score is above <strong>85</strong></p>
-        <h3>Highest Ranking Scores Air bnb Data</h3>
+        <h3>Highest Ranking Scores Air bnb Data {{country}}</h3>
         <table border="1">
             <tr>
                 <th>Sqlite3_ID</th>
                 <th>Listing URL</th>
                 <th>Name</th>
-                <th>City</th>
+                <th>Country</th>
+                <th>City/Suburb</th>
                 <th>Bedrooms</th>
                 <th>Beds</th>
                 <th>Accommodates</th>
@@ -37,6 +38,7 @@
                 <td>{{ user[6] }}</td>
                 <td>{{ user[7] }}</td>
                 <td>{{ user[8] }}</td>
+                <td>{{ user[9] }}</td>
             </tr>
             {% endfor %}
         </table>

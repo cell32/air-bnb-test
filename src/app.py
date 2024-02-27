@@ -33,6 +33,7 @@ class Users(db.Model):
     id=db.Column("User_ID", db.Integer, primary_key=True)
     listing_url=db.Column(db.String(255))
     name=db.Column(db.String(255))
+    country=db.Column(db.String(255))
     city=db.Column(db.String(255))
     bedrooms=db.Column(db.Integer)
     beds=db.Column(db.Integer)
@@ -84,6 +85,7 @@ def retrieve_data():
         user = Users(
             listing_url=item.get('listing_url', ''),            
             name=item.get('name', ''),
+            country=item.get('address', {}).get('country', ''),
             city=item.get('address', {}).get('suburb', ''),
             bedrooms=item.get('bedrooms', 0),
             beds=item.get('beds', 0),
@@ -104,7 +106,7 @@ def see_highest_ranking():
     country =  session.get('country')
     try:
         # Call the function from data_modifier.py
-        filtered_rows = see_highest_ranking_data()
+        filtered_rows = see_highest_ranking_data(country) ####
 
         return render_template("dmodified.html", highest_rankings=filtered_rows, country=country)
 

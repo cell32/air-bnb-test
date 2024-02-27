@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
     <div class="title">
         <h1>Air bnb Look up - Results</h1>
-        <p style="color: red">Note: This is a <strong> test project </strong>which is using a public air bnb dataset.
-            Some links will take you to the air bnb main page and not to the actual listing location.
+        <p style="color: red">Note: This is a <strong> test project </strong>which is using a public 
+            air bnb dataset. Some links will take you to the air bnb main page and not to the actual listing location.
         </p>
     </div>
 </head>
@@ -20,7 +20,7 @@
             <tr>
                 <th>Listing URL</th>
                 <th>Name</th>
-                <th>City</th>
+                <th>City/Suburb</th>
                 <th>Number of Bedrooms</th>
                 <th>Number of Beds</th>
                 <th>Guess Capacity</th>
@@ -38,7 +38,6 @@
                 <td>{{ item.accommodates }}</td>
                 <td>{{ item.bathrooms }}</td>
                 <td>{{ item.review_scores.review_scores_rating }}</td>
-                <!-- Add more columns based on your data structure -->
             </tr>
             {% endfor %}
         </table>

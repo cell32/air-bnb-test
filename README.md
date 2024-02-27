@@ -14,7 +14,7 @@ Follow the instructions below to get the app up and running on your machine
     ```shell
     pip install requirements.txt 
     ```
-1.  Once dependencies, set the entry point for the app 
+1.  Once dependencies are installed, set the entry point for the app 
     ```shell
     export FLASK_APP=src/app.py
     ```
