@@ -1,5 +1,5 @@
-name: AIR_bnb_TEST
 
+name: air_bnb_TEST
 on:
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
           pip install Flask Flask-Testing
-          pip install pymongo
+          # pip install pymongo
           pip install python-dotenv
         working-directory: ${{ github.workspace }}
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests
         run: |
-          cd $GITHUB_WORKSPACE/src
-          pytest tests
+          cd $GITHUB_WORKSPACE/tests
+          pytest .
         env:
-          PYTHONPATH: $GITHUB_WORKSPACE
+          PYTHONPATH: $GITHUB_WORKSPACE:$GITHUB_WORKSPACE/src
