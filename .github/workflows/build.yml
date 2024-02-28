@@ -43,6 +43,8 @@ jobs:
       - name: Run tests
         run: |
           cd $GITHUB_WORKSPACE/tests
-          pytest test
+          pytest test_login.py
+          pytest test_choices.py
+          pytest test_integration.py
         env:
           PYTHONPATH: $GITHUB_WORKSPACE/tests
