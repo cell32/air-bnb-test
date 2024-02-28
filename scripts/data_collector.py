@@ -14,13 +14,15 @@ app = Flask(__name__)
 def retrieve_airbnb_data(num_bedrooms, country):
     try:
         # MongoDB connection details
-        # connection_string = os.getenv("MONGODB_URI")
+        mongo_user = os.getenv('MONGOUSER')
+        mongo_pwd = os.getenv('MONGOPWD')
+        mongo_str = f"mongodb+srv://{mongo_user}:{mongo_pwd}@cluster0.fz0r2ef.mongodb.net/?retryWrites=true&w=majority"
+
         database_name = "sample_airbnb"
         collection_name = "listingsAndReviews"
 
         # Connect to MongoDB Atlas
-        # client = MongoClient(connection_string)
-        client = MongoClient("mongodb+srv://UserName:Password@cluster0.fz0r2ef.mongodb.net/?retryWrites=true&w=majority")
+        client = MongoClient(mongo_str)
         db = client[database_name]
         collection = db[collection_name]
 

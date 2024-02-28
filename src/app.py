@@ -82,11 +82,16 @@ def retrieve_data():
 
     ## Save data to local database using User model
     for item in result:
+        suburb = item.get('address', {}).get('suburb', '')
+        market = item.get('address', {}).get('market', '')
+
+        city = suburb if suburb else market
+            
         user = Users(
             listing_url=item.get('listing_url', ''),            
             name=item.get('name', ''),
             country=item.get('address', {}).get('country', ''),
-            city=item.get('address', {}).get('suburb', ''),
+            city=city, #item.get('address', {}).get('suburb', ''),
             bedrooms=item.get('bedrooms', 0),
             beds=item.get('beds', 0),
             accommodates=item.get('accommodates', 0),

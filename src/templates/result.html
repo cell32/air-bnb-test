@@ -31,7 +31,7 @@
             <tr>
                 <td><a href="{{ item.listing_url }}" target="_blank">{{ item.listing_url }}</a></td>
                 <td>{{ item.name }}</td>
-                <td>{{ item.address.suburb }}</td>
+                <td>{{ item.address.suburb | default(item.address.market) }}</td>
                 <td>{{ item.bedrooms }}</td>
                 <td>{{ item.beds }}</td>
                 <td>{{ item.accommodates }}</td>
