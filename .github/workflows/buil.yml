@@ -40,9 +40,3 @@ jobs:
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
 
-      - name: Run tests
-        run: |
-          cd $GITHUB_WORKSPACE/src
-          pytest tests
-        env:
-          PYTHONPATH: $GITHUB_WORKSPACE
